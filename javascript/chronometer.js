@@ -20,8 +20,10 @@ class Chronometer {
   }
 
   getSeconds() {
-    if (this.getMinutes % 2 !== 0) {
-      return this.getMinutes % 60;
+    if (this.currentTime > 60) {
+      return this.currentTime % 60;
+     } else {
+      return 0;
     }
   }
 
