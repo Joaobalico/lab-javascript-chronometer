@@ -12,23 +12,13 @@ class Chronometer {
   }
 
   getMinutes() {
-    if (this.currentTime > 60) {
-      return Math.floor (this.currentTime / 60);
-     } else {
-      return 0;
-    }
+      return Math.floor(this.currentTime / 60);
   }
 
   getSeconds() {
-    if (this.currentTime <= 60) {
-      return this.currentTime;
-    }
-    if (this.currentTime > 60) {
-      return this.currentTime % 60;
-     } else {
-      return 0;
-    }
+      return this.currentTime %= 60;
   }
+
 
   computeTwoDigitNumber(value) {
     let num = value.toString()
@@ -47,7 +37,7 @@ class Chronometer {
   }
 
   split() {
-    // ... your code goes here
+    return `${this.computeTwoDigitNumber(this.getMinutes())}:${this.computeTwoDigitNumber(this.getSeconds())}`;
   }
 }
 
